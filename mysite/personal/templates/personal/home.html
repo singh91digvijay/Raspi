@@ -1,0 +1,215 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+
+<style>
+
+div#back{
+	position: absolute;
+	left: 35px;
+	top: 250px;
+	background-repeat: repeat;
+	background-color: #333;
+	height: 150px;
+	width: 350px; 
+	text-align: center;
+}
+
+div#frontred p.big{
+	line-height: 300%;
+}
+div#frontred{
+	background-color: #ff0000;
+	position: absolute;
+	width: 350px;
+	height: 45px;
+}
+
+div#shell {
+    position: absolute;
+    left: 550px;
+    top: 250px;
+    background-repeat: repeat;
+    background-color: #ffffff;
+    height: 442px;
+    width: 500px;
+    text-align: center;
+}	
+div#shellfrontred p.big{
+	line-height: 300%;
+}
+div#shellfrontred{
+	background-color: #ff0000;
+	position: absolute;
+	width: 500px;
+	height: 45px;
+	
+}
+
+table, th{
+	color: #ffffff;
+	margin: 20px;
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+	vertical-align: center;
+	left: 50px;
+	width: 350px;
+}
+
+div#activeconns tr{
+	background: #333;
+}
+div#activeconns tr:first-child{
+	background: #ff0000;
+}
+
+div#activeconns{
+	position: absolute;
+	top: 400px;
+	height: 300px;
+	left: 15px;
+	overflow: auto;	
+	width: 21%;
+}
+
+
+
+
+
+
+
+
+
+div#connhistory tr{
+	background: #333;
+}
+
+div#connhistory tr:first-child{
+	background: #ff0000;
+}
+div#connhistory {
+    position: absolute;
+    width: 696px;
+    top: 235px;
+    right: 25px;
+    height: 450px;
+    overflow: auto;
+}
+
+div#connhistory table{
+	align: right;
+
+}
+a.btn btn-default{
+	position: absolute;
+	top: 750px;
+	right: 550px;
+	
+}
+.table11{
+overflow: auto;
+
+
+}
+tbody{
+overflow:scroll;
+}
+
+
+body { margin: 0px; padding: 20px; }
+    #received { width: 500px; height: 400px; border: 1px solid #dedede; overflow-y:scroll;}
+    #sent { width: 500px; } 
+	.glog {
+    float: right;
+  
+    width: 100px;
+    margin-top: 540px;
+    margin-right: 22px;
+}
+
+
+#shell {
+					width: 500px;
+					height: 600px;
+					border: 1px solid #dedede;
+					overflow-y: scroll;}
+					
+					
+				#send {
+					width: 500px;
+
+}
+.form12 {    width: 100%; }
+#contact_form {    width: 237px;    margin: 0 auto;    margin-bottom: !important;    margin-top: 31%;    margin-right: 45%;}
+</style>
+
+<div class="glog">
+<a href={% url 'logs'%} class="btn btn-default">Generate Logs</a> 
+
+</div>
+<div id="back" class="box">
+	<div id="frontred" class="box">
+		<p class="big"><font color="#ffffff" size="4">Active Connections</font></p>
+	</div>
+	<br>
+	<br>	
+<p><font color="#ffffff" font size="8"><h3>{{ HOSTS }}</h3></font></p>
+</div>
+
+
+
+	
+<div class="form12">	
+		<form id="contact_form" method="POST" action="">
+		{% csrf_token %}
+		<input id="command1" name="command1"/>
+		<input id= "submit" type="button" value="send"/></form>
+	</div>
+
+
+<div id="connhistory" class="table">
+	<table class="table11">
+		<tr>
+			<th>S.No</th>
+			<th>IP ADDRESS</th>
+			<th>NAME</th>
+			<th>STATUS</th>
+			<th>START TIME</th>
+			<th>END TIME</th>
+		</tr>
+		 
+			{% for d in data %}
+				<tr>
+					{% for a in d %}
+						<th>{{ a }}</th>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+	</table>
+	<div class="glog">
+<a href={% url 'logs'%} class="btn btn-default">Generate Logs</a> 
+
+</div>
+</div>
+
+<div id="activeconns" class="table" >
+	<table align="left" class="table11">
+		<tr>
+			<th>S No</th>
+			<th>IP Address</th>
+			<th>NAME</th>
+		</tr>
+		{% for d in data1 %}
+			<tr>
+				{% for a in d %}
+					<th>{{ a }}</th>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+
+
+
+{% endblock %}

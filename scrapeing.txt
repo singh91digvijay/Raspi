@@ -1,0 +1,9 @@
+def logs(request):
+    r = requests.get("http://127.0.0.1:8000")
+    soup = BeautifulSoup(r.content)
+    soup.find_all("div", {"id": "connhistory"})
+    for link in soup.find_all("div", {"id": "connhistory"}):
+        print link.text.encode('UTF-8')
+    return HttpResponse(link)
+
+

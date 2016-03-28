@@ -1,0 +1,25 @@
+{% block content %}
+
+<div id="connhistory" class="table">
+	<table>
+		<tr>
+			<th>S.No</th>
+			<th>IP ADDRESS</th>
+			<th>NAME</th>
+			<th>STATUS</th>
+			<th>START TIME</th>
+			<th>END TIME</th>
+		</tr>
+		 
+			{% for d in data %}
+				<tr>
+					{% for a in d %}
+						<th>{{ a }}</th>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+	</table>
+</div>
+
+{% endblock %}
+

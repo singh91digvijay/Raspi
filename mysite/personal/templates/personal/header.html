@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Information Security</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	<script src="{% static "js/jquery-1.11.1.js" %}"></script>
+	<script src="{% static "js/personal-jquery-1.11.1.js" %}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.2.js'></script>
+
+<style> 
+				ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: auto;
+				background-color: #333;
+				}
+
+				li {
+					float: left;
+				}
+
+				li a {
+					display: block;
+					color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				}
+				.active {
+					background-color: #ff0000;
+				}
+				
+
+				/* Change the link color to #111 (black) on hover */
+								li a:hover {
+								background-color: #ff0000;
+				}
+
+				.footer11 {
+					
+				
+				   width:100%;
+				   height:60px;   /* Height of the footer */
+				 
+				   }
+				   .bottom_line {
+					text-align: center;
+				}
+
+
+
+				.main_container {
+					width: 100%;
+					height: 880px;
+					float: left;
+				}
+				body{
+				  overflow-x: hidden;
+				  
+				}
+				
+				
+				
+	</style>
+</head>
+
+<body class="body" style="background-image:pi_logo.jpg">
+	<div class="main_container">
+		<div class="container-fluid" style="min-height:95%; ">
+			<div class="row">
+				<div class="col-sm-2">
+					<br>
+					<center>
+						<img src="{% static 'personal/img/contextis_logo.png' %}" class="responsive-img" style='max-height:100px;' alt="face">
+					</center>
+				</div>
+				<div class="col-sm-10">
+					<br>
+					<center>
+					<h1><b>Ras-Pi: Command & Control</h1>
+					</center>
+				</div>
+			</div>
+		
+	
+			<div class="row">
+				<ul>
+					<li><a href="#home"></a></li>
+					<ul style="float:right;list-style-type:none;">
+						<li><a class="active" href="#login">Login</a></li>
+						<li><a href="#contact"></a></li>
+						<li><a  href="#about"></a></li>
+					</ul>
+				</ul>
+	
+		
+			<div class='container-fluid'>
+				<br><br>
+			   {% block content %}
+			   
+			   {% endblock %}	
+			</div>
+		  </div>
+		</div> 
+	</div>
+	<footer>
+		<div class="footer11">
+			<p class="bottom_line">© 2016 Information Security, all components of this software are commercial-in-confidence.
+			<a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+		</div>
+	</footer>	
+	</div>
+	
+</body>
+</html>

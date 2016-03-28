@@ -1,0 +1,115 @@
+div#back{
+	position: absolute;
+	left: 35px;
+	top: 250px;
+	background-repeat: repeat;
+	background-color: #333;
+	height: 150px;
+	width: 350px; 
+	text-align: center;
+}
+
+div#frontred p.big{
+	line-height: 300%;
+}
+div#frontred{
+	background-color: #ff0000;
+	position: absolute;
+	width: 350px;
+	height: 45px;
+}
+
+div#shell{
+	position: absolute;
+	left: 550px;
+	top: 250px;
+	background-repeat: repeat;
+	background-color: #333;
+	height: 450px;
+	width: 500px; 
+	text-align: center;
+}	
+div#shellfrontred p.big{
+	line-height: 300%;
+}
+div#shellfrontred{
+	background-color: #ff0000;
+	position: absolute;
+	width: 500px;
+	height: 45px;
+	
+}
+
+table, th{
+	color: #ffffff;
+	margin: 20px;
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+	vertical-align: center;
+	left: 50px;
+	width: 350px;
+}
+
+div#activeconns tr{
+	background: #333;
+}
+div#activeconns tr:first-child{
+	background: #ff0000;
+}
+
+div#activeconns{
+	position: absolute;
+	top: 400px;
+	height: 450px;
+	left: 15px;
+	overflow: auto;	
+}
+
+
+
+
+
+
+
+
+
+div#connhistory tr{
+	background: #333;
+}
+
+div#connhistory tr:first-child{
+	background: #ff0000;
+}
+div#connhistory{
+	position: absolute;
+	width: 800px;
+	top:235px;
+	right: 25px;
+	height:450px;
+	overflow: auto;
+}
+
+div#connhistory table{
+	align: right;
+
+}
+a.btn btn-default{
+	position: absolute;
+	top: 750px;
+	right: 550px;
+	
+}
+.table11{
+overflow: auto;
+
+
+}
+tbody{
+overflow:scroll;
+}
+
+
+body { margin: 0px; padding: 20px; }
+    #received { width: 500px; height: 400px; border: 1px solid #dedede; overflow-y:scroll;}
+    #sent { width: 500px; } 
