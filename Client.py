@@ -10,7 +10,7 @@ def socket_create():
         global host
         global port
         global s
-        host = '192.168.0.16'
+        host = 'Use Server IP Address'
         port = 9999
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     except socket.error as msg:
